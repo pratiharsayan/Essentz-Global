@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-luxury-black text-luxury-light overflow-x-hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  @apply font-bold tracking-wide;
+}
+
+h4, h5, h6 {
+  font-family: 'Cormorant', serif;
+  @apply font-semibold;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-luxury-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-luxury-gold rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-luxury-beige;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #c9a961 0%, #d4af8f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hover underline animation */
+.nav-link {
+  @apply relative text-luxury-light transition-colors duration-300;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-luxury-gold transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+/* Premium button styles */
+.btn-luxury {
+  @apply px-8 py-3 rounded-full text-luxury-light bg-luxury-gold hover:bg-luxury-beige transition-all duration-300 font-semibold tracking-wide uppercase text-sm;
+}
+
+.btn-luxury-outline {
+  @apply px-8 py-3 rounded-full text-luxury-gold border border-luxury-gold hover:bg-luxury-gold hover:text-luxury-black transition-all duration-300 font-semibold tracking-wide uppercase text-sm;
+}
+
+/* Card hover effect */
+.card-hover {
+  @apply transition-all duration-500 hover:shadow-2xl;
+}
+
+/* Glassmorphism */
+.glassmorphism {
+  background: rgba(31, 31, 31, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(201, 169, 97, 0.2);
+}
+
+/* Premium divider */
+.divider-luxury {
+  @apply h-1 bg-gradient-to-r from-transparent via-luxury-gold to-transparent;
+}
+
+/* Section padding */
+.section-padding {
+  @apply px-4 py-16 md:px-8 md:py-24;
+}
+
+/* Parallax background */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
